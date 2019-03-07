@@ -40,7 +40,7 @@ $weekDays = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satur
 $daysInYear = daysInXMonths(13);
 
 // month to days
-$monthsToDays = daysInXMonths($month-1); // dont count current month.
+$monthsToDays = daysInXMonths($month-1); // don't count current month.
 // years since 1900
 $diff = $year - 1900;
 // years to days minus the leap years.
