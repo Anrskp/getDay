@@ -1,7 +1,5 @@
 <?php
 
-$daysInAYear = daysInXMonths(13);
-
 // get amount of days from 1st to X month.
 function daysInXMonths(int $months) {
 
