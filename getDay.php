@@ -51,12 +51,12 @@ $total = $dayfromyear + $MonthsToDays + $day;
 // ANDEN LØSNING
 // days since 2013 - leap years
 $total2 = $MonthsToDays + $day - countLeapYears($year);
-// get week day number
 
+// get week day number
 $weekday = $total % 7; // = 6 - Saturday
 $weekday2 = $total2 % 7; // = 6 - Saturday
 
-
+// convert to week string
 return $weekDays[$weekday-1]; // -1 array start from 0
 
 }
