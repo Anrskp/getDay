@@ -40,7 +40,7 @@ $weekDays = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satur
 $daysInYear = daysInXMonths(13);
 
 // month to days
-$MonthsToDays = daysInXMonths($month-1); // dont count current month.
+$monthsToDays = daysInXMonths($month-1); // dont count current month.
 // years since 1900
 $diff = $year - 1900;
 // years to days minus the leap years.
@@ -48,11 +48,11 @@ $dayfromyear = $daysInYear * $diff - countLeapYears($year);
 
 // FØRSTE LØSNING
 // total day since init
-$total = $dayfromyear + $MonthsToDays + $day;
+$total = $dayfromyear + $monthsToDays + $day;
 
 // ANDEN LØSNING
 // days since 2013 - leap years
-$total2 = $MonthsToDays + $day - countLeapYears($year);
+$total2 = $monthsToDays + $day - countLeapYears($year);
 
 // get week day number
 $weekday = $total % 7; // = 6 - Saturday
