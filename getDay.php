@@ -41,7 +41,9 @@ $daysInYear = daysInXMonths(13);
 
 // month to days
 $MonthsToDays = daysInXMonths($month-1); // dont count current month.
+// years since 1900
 $diff = $year - 1900;
+// years to days minus the leap years.
 $dayfromyear = $daysInYear * $diff - countLeapYears($year);
 
 // FØRSTE LØSNING
