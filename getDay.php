@@ -40,7 +40,7 @@ $weekDays = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satur
 $DayOfTheWeek = 0;
 
 // Months to days
-$MonthsToDays = daysInXMonths($month);
+$MonthsToDays = daysInXMonths($month-1); // dont count current month.
 
 // total days 'rotation' since last monday minus the leap years
 $totalDays = $MonthsToDays + $day - countLeapYears($year);
