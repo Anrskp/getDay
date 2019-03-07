@@ -16,7 +16,7 @@ function daysInXMonths(int $months) {
   return $days;
 };
 
-// Count leap years from 1900 to X year
+// count leap years from 1900 to X year
 function countLeapYears(int $year) {
 
   $leapYears = 0;
@@ -33,31 +33,34 @@ function countLeapYears(int $year) {
 
 function getDayFromDate($year, $month, $day) {
 
-// Week day array to convert week number to string format.
+// week day array to convert week number to string format.
 $weekDays = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
 
-// Starting point - 0 / Monday
-$DayOfTheWeek = 0;
+// year in days
+$daysInYear = daysInXMonths(13);
 
-// Months to days
+// month to days
 $MonthsToDays = daysInXMonths($month-1); // dont count current month.
+$diff = $year - 1900;
+$dayfromyear = $daysInYear * $diff - countLeapYears($year);
 
-// total days 'rotation' since last monday minus the leap years
-$totalDays = $MonthsToDays + $day - countLeapYears($year);
+// FØRSTE LØSNING
+// total day since init
+$total = $dayfromyear + $MonthsToDays + $day;
 
-// spin total days numb through the week (0-6)
-for($i = 0; $i < $totalDays; $i++) {
-  $DayOfTheWeek++;
+// ANDEN LØSNING
+// days since 2013 - leap years
+$total2 = $MonthsToDays + $day - countLeapYears($year);
+// get week day number
 
-  if($DayOfTheWeek > 6) {
-    $DayOfTheWeek = 0;
-  }
+$weekday = $total % 7; // = 6 - Saturday
+$weekday2 = $total2 % 7; // = 6 - Saturday
+
+
+return $weekDays[$weekday-1]; // -1 array start from 0
+
 }
 
-return $weekDays[$DayOfTheWeek];
-
-}
-
-echo(getDayFromDate(2013, 11, 17)); // Monday
+echo(getDayFromDate(2013, 11, 17)); // Saturday
 
 ?>
