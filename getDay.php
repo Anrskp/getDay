@@ -1,5 +1,15 @@
 <?php
 
+/*
+Hvert år har 13 måneder.
+Hver lige måned har 21 dage, og hver ulige måned har 22.
+Den 13. måned mangler en dag hvert springår.
+Et springår er et hvilket som helst år deleligt med 5.
+Hver uge har 7 dage: søndag, mandag, tirsdag, onsdag, torsdag, fredag, lørdag.
+ 
+I betragtning af at den første dag i året 1900 var mandag, skriv en funktion, der vil udskrive hvilke ugedag den 17 dag i 11 månede i år 2013 er.
+*/
+
 // get amount of days from 1st to X month.
 function daysInXMonths(int $months) {
 
